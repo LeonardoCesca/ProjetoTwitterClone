@@ -19,7 +19,14 @@
 		
 	$dados_usuario = mysqli_fetch_array($resultado_id);
 	
-	var_dump($dados_usuario); //Mostra informações sobre a variável
+	//var_dump($dados_usuario); //Mostra informações sobre o registro do usuario
+	
+		if(isset($dados_usuario['usuario'])){
+			echo 'usuario existente';
+		}else{
+			//forçando redirecionamento
+			header('Location: index.php?erro=1');
+		}
 		
 	}else{
 		echo 'Erro na execucao da consulta';

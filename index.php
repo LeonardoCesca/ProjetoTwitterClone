@@ -1,3 +1,11 @@
+<!--Recuperando mensagem de erro usuario inválido-->
+
+<?php
+	
+	$erro = isset($_GET['erro']) ? $_GET['erro'] : 0; // if ternário
+
+?>
+
 <!DOCTYPE HTML>
 <html lang="pt-br">
 	<head>
@@ -34,7 +42,7 @@
 	        <div id="navbar" class="navbar-collapse collapse">
 	          <ul class="nav navbar-nav navbar-right">
 	            <li><a href="inscrevase.php">Inscrever-se</a></li>
-	            <li class="">
+	            <li class="<?= $erro == 1? 'open' : '' ?> "> <!--tag curta do php, faz com que ao dar erro ao logar, abra a janela entrar.. --> 
 	            	<a id="entrar" data-target="#" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entrar</a>
 					<ul class="dropdown-menu" aria-labelledby="entrar">
 						<div class="col-md-12">
@@ -54,6 +62,13 @@
 								<br /><br />
 								
 							</form>
+							
+							<?php
+								if($erro == 1){
+									echo 'Usuario e/ou senha inválido(s) ';
+								}
+							
+							?>
 						</form>
 				  	</ul>
 	            </li>
