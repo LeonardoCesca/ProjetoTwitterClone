@@ -1,10 +1,12 @@
 <?php
 
-    session_start();
+session_start();
 
-    unset($_SESSION['usuario']);
-    unset($_SESSION['email']);
+unset($_SESSION['usuario']);
+unset($_SESSION['email']);
+header('refresh:2,url=index.php');
 
-    echo 'Esperamos você de volta em breve!!!';
+echo 'Esperamos você de volta em breve!!!'
+
 
 ?>

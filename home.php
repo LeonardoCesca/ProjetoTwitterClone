@@ -1,9 +1,11 @@
-<?
-    session_start();
+<?php
+	
+	session_start();
 
-    if(!$_SESSION['usuario']){
-        header('Location: index.php?erro=1');
-    }
+	if(!isset($_SESSION['usuario'])){
+		header('Location: index.php?erro=1');
+	}
+
 ?>
 
 <!DOCTYPE HTML>
@@ -52,10 +54,10 @@
 	    	<div class="col-md-4"></div>
 	    	<div class="col-md-4">
 	    		Usuário autenticado!!!
-                <br />
-                <?= $_SESSION['usuario'] ?>
-                <br />
-                <?= $_SESSION['email'] ?>
+	    		<br />
+	    		<?= $_SESSION['usuario'] ?>
+	    		<br />
+	    		<?= $_SESSION['email'] ?>
 			</div>
 			<div class="col-md-4"></div>
 
