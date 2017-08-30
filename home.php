@@ -49,6 +49,26 @@
 
 				});
 
+				function atualizaTweet(){
+
+					//carregar os tweets
+
+					$.ajax({
+
+						url: 'get_tweet.php',
+
+						success: function(data){
+
+							$('#tweets').html(data);
+
+						}
+
+					});
+
+				}
+
+				atualizaTweet();
+
 			});
 
 		</script>
@@ -83,7 +103,7 @@
 			<div class="col-md-3">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<h4> <? $_SESSION['usuario'] ?> </h4>
+						<h4><?= $_SESSION['usuario'] ?></h4>
 						<hr />
 						<div class="col-md-6">
 							TWEETS <br /> 1
@@ -105,6 +125,7 @@
 						</form>
 					</div>
 				</div>
+				<div id="tweets" class="list-group"></div>
 			</div>
 			<div class="col-md-3">
 				<div class="panel panel-default">
