@@ -39,7 +39,7 @@
 
 								$('#texto_tweet').val('');
 								
-								alert('Tweet incluído com sucesso!!!');
+								atualizaTweet();
 
 							}
 
@@ -103,7 +103,7 @@
 			<div class="col-md-3">
 				<div class="panel panel-default">
 					<div class="panel-body">
-						<h4><?= $_SESSION['usuario'] ?></h4>
+						<!--<h4><?//= $_SESSION['usuario'] //?></h4> -->
 						<hr />
 						<div class="col-md-6">
 							TWEETS <br /> 1
